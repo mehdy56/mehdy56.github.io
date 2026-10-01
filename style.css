@@ -1,0 +1,295 @@
+/* Couleurs et réglages de base */
+:root {
+  --fond: #0b1020;
+  --carte: #151c32;
+  --texte: #f5f7ff;
+  --texte-secondaire: #aab5d0;
+  --accent: #8d8cff;
+  --bordure: #2b3551;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.conteneur {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+/* Menu */
+.site-header {
+  border-bottom: 1px solid var(--bordure);
+  background: #0b1020;
+}
+
+.navigation,
+.footer-contenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.navigation {
+  min-height: 80px;
+}
+
+.logo {
+  font-size: 1.15rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.logo span,
+.hero h1 span,
+.lien-texte {
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+nav a {
+  color: var(--texte-secondaire);
+}
+
+nav a:hover,
+nav a.actif,
+.site-footer a:hover {
+  color: var(--texte);
+}
+
+/* Accueil */
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 610px;
+  background:
+    linear-gradient(90deg, #0b1020 12%, rgba(11, 16, 32, 0.65) 58%, transparent),
+    url("images/fond-portfolio.png") center / cover no-repeat;
+}
+
+.hero-contenu {
+  padding: 90px 0;
+}
+
+.etiquette {
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 22px;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 1.12;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+.introduction,
+.texte-section {
+  max-width: 620px;
+  color: var(--texte-secondaire);
+  font-size: 1.1rem;
+}
+
+.boutons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.bouton {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.bouton-principal {
+  background: var(--accent);
+  color: #0b1020;
+}
+
+.bouton-principal:hover {
+  background: #aaa9ff;
+}
+
+.bouton-secondaire {
+  border-color: var(--bordure);
+  color: var(--texte);
+}
+
+.bouton-secondaire:hover {
+  border-color: var(--accent);
+}
+
+.section {
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+
+.lien-texte {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+/* Pages Projets et Contact */
+.page-interieure {
+  min-height: 70vh;
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+
+.page-interieure h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.grille-projets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 45px;
+}
+
+.carte,
+.contact-bloc {
+  overflow: hidden;
+  border: 1px solid var(--bordure);
+  border-radius: 14px;
+  background: var(--carte);
+}
+
+.carte-visuel {
+  display: grid;
+  height: 180px;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.visuel-un {
+  background: linear-gradient(135deg, #3946a1, #7455a6);
+}
+
+.visuel-deux {
+  background: linear-gradient(135deg, #126e91, #403c9e);
+}
+
+.visuel-trois {
+  background: linear-gradient(135deg, #7b3e82, #304a9a);
+}
+
+.carte-contenu {
+  padding: 24px;
+}
+
+.carte-contenu h2 {
+  font-size: 1.3rem;
+}
+
+.carte-contenu p:last-child,
+.contact-bloc p {
+  color: var(--texte-secondaire);
+}
+
+.contact-bloc {
+  max-width: 700px;
+  margin-top: 45px;
+  padding: 38px;
+}
+
+.contact-bloc .bouton {
+  margin-top: 12px;
+}
+
+.retour {
+  margin-top: 38px;
+}
+
+/* Pied de page */
+.site-footer {
+  border-top: 1px solid var(--bordure);
+}
+
+.footer-contenu {
+  min-height: 90px;
+  color: var(--texte-secondaire);
+  font-size: 0.9rem;
+}
+
+.footer-contenu p {
+  margin: 0;
+}
+
+/* Adaptation aux petits écrans */
+@media (max-width: 700px) {
+  .navigation {
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .hero {
+    min-height: 560px;
+    background-position: 60% center;
+  }
+
+  .grille-projets {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-contenu {
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px 0;
+    text-align: center;
+  }
+}
